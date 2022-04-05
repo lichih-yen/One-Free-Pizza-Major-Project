@@ -1,0 +1,16 @@
+.heroContainer {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
+    url("../../images/backgroud.jpg");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+h1,
+p {
+  color: white;
+}
+
+.heroContent {
+  margin: 100px 50px;
+}

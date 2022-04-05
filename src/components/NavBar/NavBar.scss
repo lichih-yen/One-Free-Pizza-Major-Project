@@ -1,0 +1,18 @@
+nav {
+  display: flex;
+  background: transparent;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+.NavLink {
+  display: flex;
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+  padding: 0 20px;
+  align-items: center;
+  cursor: pointer;
+}
