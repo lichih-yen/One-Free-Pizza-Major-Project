@@ -1,6 +1,10 @@
 form {
+  margin-top: 0;
+  padding: 0;
   .error {
     margin-left: 15px;
+    margin-bottom: 0;
+    padding-bottom: 0;
     color: red;
   }
 
@@ -50,6 +54,7 @@ form {
     border-radius: 10px;
     padding: 10px 25px;
     margin-left: 15px;
+    margin-top: 20px;
     font-size: 14px;
 
     &:hover {

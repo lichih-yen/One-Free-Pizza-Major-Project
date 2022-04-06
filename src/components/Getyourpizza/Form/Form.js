@@ -41,11 +41,11 @@ function Form() {
     let error = [];
 
     if (style === "-Select-") {
-      error.push("Choose a Style you want.");
+      error.push("Select a Style you want.");
     }
 
     if (crust === "-Select-") {
-      error.push("Select a crust you like.");
+      error.push("Choose a Crust you like.");
     }
 
     if (name === "") {
@@ -60,6 +60,16 @@ function Form() {
     if (error.length > 0) {
       setErrorMessage(error);
     }
+    // else {
+    //   let data = {
+    //     id: uuid(),
+    //     style: style,
+    //     crust: crust,
+    //     cheese: extraCheese,
+    //     name: name,
+    //     address: address,
+    //   };
+    // }
   };
 
   // const renderCheckBox = () => {
@@ -72,8 +82,12 @@ function Form() {
     <form onSubmit={handleSubmit}>
       {errorMessage && (
         <div className="error">
-          Invalid data:{<br />}
-          {errorMessage}
+          Invalid data:
+          <ul>
+            {errorMessage.map((error, index) => (
+              <li key={index}>{error}</li>
+            ))}
+          </ul>
         </div>
       )}
       <h3>Create your own pizza and submit your order.</h3>
