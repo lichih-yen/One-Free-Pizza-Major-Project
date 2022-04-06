@@ -8,15 +8,25 @@ import { NavLink } from "react-router-dom";
 function MainMenu() {
   return (
     <nav>
-      <a href="#">
+      <a href="/">
+        <AiOutlineHome />
+      </a>
+      <a href="/getyourpizza">
+        <IoPizzaOutline />
+      </a>
+      <a href="/orders">
+        <IoDocumentTextOutline />
+      </a>
+
+      {/* <NavLink to="/">
         <AiOutlineHome style={iconStyle} />
-      </a>
-      <a href="#">
+      </NavLink>
+      <NavLink to="/getyourpizza">
         <IoPizzaOutline style={iconStyle} />
-      </a>
-      <a href="#">
+      </NavLink>
+      <NavLink to="/orders">
         <IoDocumentTextOutline style={iconStyle} />
-      </a>
+      </NavLink> */}
     </nav>
   );
 }

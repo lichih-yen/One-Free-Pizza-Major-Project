@@ -1,9 +1,9 @@
 import React from "react";
-import "./Home.scss";
+import "./HomePage.scss";
 
-function Home() {
+function HomePage() {
   return (
-    <div className="home-container">
+    <main className="home-container">
       <h1>Welcome</h1>
       <p>Hi there,</p>
       <p>
@@ -13,8 +13,8 @@ function Home() {
       <p>
         Please, do not order more than once. <strong>We trust you!</strong>
       </p>
-    </div>
+    </main>
   );
 }
 
-export default Home;
+export default HomePage;
