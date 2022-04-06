@@ -1,8 +1,8 @@
 form {
-  //   .error {
-  //     margin-left: 15px;
-  //     color: blue;
-  //   }
+  .error {
+    margin-left: 15px;
+    color: red;
+  }
 
   label {
     display: block;
@@ -20,7 +20,7 @@ form {
       padding: 3px;
       border-radius: 5px;
       border-color: lightgray;
-      color: white;
+      color: rgb(90, 90, 90);
     }
 
     .data-input {
@@ -29,7 +29,7 @@ form {
       padding: 3px;
       border-radius: 6px;
       border-color: lightgray;
-      color: white;
+      //   color: white;
     }
 
     select {
@@ -38,7 +38,7 @@ form {
       padding: 3px;
       border-radius: 6px;
       border-color: lightgray;
-      color: darkgrey;
+      color: rgb(90, 90, 90);
     }
   }
 

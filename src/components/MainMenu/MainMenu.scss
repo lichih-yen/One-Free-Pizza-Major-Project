@@ -8,7 +8,6 @@ nav {
   top: 5;
   left: 50%;
   transform: translate(-50%);
-  //   bottom: 2rem;
   display: flex;
   gap: 0.8rem;
   border-radius: 3rem;
@@ -25,11 +24,9 @@ nav {
     &:hover {
       background: rgba(105, 105, 105, 0.4);
       transition: 0.2s ease-in-out;
-      //   transition: background 0.2s linear, border-radius 1s ease-in 1s;
     }
   }
   .active {
-    // ${({isActive}) => (isActive ? 'background: rgba(0, 0, 0, 0.6) color: orange;'): 'inactive'} ;
     background: rgba(105, 105, 105, 0.5);
     color: white;
   }

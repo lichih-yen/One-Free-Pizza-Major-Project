@@ -4,6 +4,9 @@ import "./Form.scss";
 function Form() {
   const [style, setStyle] = useState("-Select-");
   const [crust, setCrust] = useState("-Select-");
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleStyleChange = (event) => {
     const value = event.target.value;
@@ -15,8 +18,48 @@ function Form() {
     setCrust(value);
   };
 
+  const handleNameChange = (event) => {
+    const value = event.target.value;
+    setName(value);
+  };
+
+  const handleAddressChange = (event) => {
+    const value = event.target.value;
+    setAddress(value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    let error = [];
+
+    if (style === "-Select" || style === "") {
+      error.push("Select a Style you want");
+    }
+
+    if (crust === "-Select" || crust === "") {
+      error.push("Select a crust you like");
+    }
+
+    if (name === "") {
+      error.push("Please enter your name");
+    }
+
+    if (address === "") {
+      error.push("Please enter your address");
+    }
+
+    // Update the state based on the errors
+    if (error.length > 0) {
+      setErrorMessage(error);
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
+      {errorMessage && (
+        <div className="error">Invalid data: {errorMessage}</div>
+      )}
       <h3>Create your own pizza and submit your order.</h3>
       <label>
         <span>Style</span>
@@ -55,8 +98,8 @@ function Form() {
           className="data-input"
           type="text"
           maxLength={150}
-          value={""}
-          onChange={""}
+          value={name}
+          onChange={handleNameChange}
         />
       </label>
 
@@ -66,8 +109,8 @@ function Form() {
           className="data-input"
           type="text"
           maxLength={150}
-          value={""}
-          onChange={""}
+          value={address}
+          onChange={handleAddressChange}
         />
       </label>
 
