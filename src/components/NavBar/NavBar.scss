@@ -22,10 +22,12 @@ nav {
     border-radius: 50%;
 
     &:hover {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.4);
+      transition: 0.2s ease-in-out;
     }
 
     .active {
+      // ${({isActive}) => (isActive ? 'background: rgba(0, 0, 0, 0.6) color: orange;'): 'inactive'} ;
       background: rgba(0, 0, 0, 0.6);
       color: orange;
     }

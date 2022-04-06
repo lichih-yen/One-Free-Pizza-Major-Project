@@ -3,38 +3,42 @@ import "./NavBar.scss";
 import { AiOutlineHome } from "react-icons/ai";
 import { IoPizzaOutline } from "react-icons/io5";
 import { IoDocumentTextOutline } from "react-icons/io5";
-import { NavLink } from "react-router-dom";
-// import { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
+import GetYourPizza from "../GetYourPizza/GetYourPizza";
+import { useState } from "react";
 
 const NavBar = () => {
-  // const [isActiveNav, setIsActiveNav] = useState(true);
+  const [isActive, setIsActive] = useState(true);
+
+  const handleNavClick = () => {
+    setIsActive(!isActive);
+  };
 
   return (
     <nav>
-      <NavLink
+      <Link
         to="/"
-        // onClick={() => setIsActiveNav(true)}
+        onClick={handleNavClick}
         className={({ isActive }) => (isActive ? "active" : "inactive")}
       >
         <AiOutlineHome />
-      </NavLink>
-      <NavLink
-        // to="/getYourPizza"
-        to="/"
+      </Link>
+      <Link
+        to="/getYourPizza"
         className={({ isActive }) => (isActive ? "active" : "inactive")}
-        // onClick={() => setIsActiveNav(true)}
+        onClick={handleNavClick}
       >
         <IoPizzaOutline />
-      </NavLink>
-      <NavLink
-        // to="/orders"
-        to="/"
+      </Link>
+      <Link
+        to="/orders"
         className={({ isActive }) => (isActive ? "active" : "inactive")}
         // className={isActiveNav === true ? "" : "null"}
-        // onClick={() => setIsActiveNav(true)}
+        onClick={handleNavClick}
+        // className={isActive === !isActive}
       >
         <IoDocumentTextOutline />
-      </NavLink>
+      </Link>
     </nav>
   );
 };

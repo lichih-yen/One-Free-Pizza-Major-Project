@@ -2,7 +2,6 @@ import React from "react";
 import "./Hero.scss";
 import NavBar from "../NavBar/NavBar";
 import Header from "../Header/Header";
-// import { Routes, Route } from "react-router-dom";
 
 const Hero = () => {
   return (
