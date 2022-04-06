@@ -2,7 +2,7 @@ import React from "react";
 import "./OrdersPage.scss";
 
 function OrdersPage() {
-  return <div>OrdersPage</div>;
+  return <main>OrdersPage</main>;
 }
 
 export default OrdersPage;

@@ -1,22 +1,22 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./MainMenu.scss";
 import { AiOutlineHome } from "react-icons/ai";
 import { IoPizzaOutline } from "react-icons/io5";
 import { IoDocumentTextOutline } from "react-icons/io5";
-import { NavLink } from "react-router-dom";
 
 function MainMenu() {
   return (
     <nav>
-      <a href="/">
+      <NavLink to="/">
         <AiOutlineHome />
-      </a>
-      <a href="/getyourpizza">
+      </NavLink>
+      <NavLink to="/getyourpizza">
         <IoPizzaOutline />
-      </a>
-      <a href="/orders">
+      </NavLink>
+      <NavLink to="/orders">
         <IoDocumentTextOutline />
-      </a>
+      </NavLink>
 
       {/* <NavLink to="/">
         <AiOutlineHome style={iconStyle} />
@@ -31,9 +31,9 @@ function MainMenu() {
   );
 }
 
-const iconStyle = {
-  color: "white",
-  fontSize: "20px",
-};
+// const iconStyle = {
+//   color: "white",
+//   fontSize: "20px",
+// };
 
 export default MainMenu;
