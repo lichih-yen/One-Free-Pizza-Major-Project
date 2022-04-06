@@ -6,7 +6,7 @@ function Getyourpizza() {
   return (
     <div className="getPizza-container">
       <h1>Get Your Pizza</h1>
-      <p>Create your own pizza and submit your order.</p>
+
       <Form />
     </div>
   );
