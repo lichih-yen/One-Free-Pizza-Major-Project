@@ -16,7 +16,8 @@ function Header() {
 }
 
 const iconPizza = {
-  marginRight: "18px",
+  marginRight: "19px",
+  color: "#F7AD45",
 };
 
 export default Header;

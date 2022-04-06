@@ -1,5 +1,5 @@
 import React from "react";
-import "./GetYourPizza.css";
+import "./GetYourPizza.scss";
 
 function GetYourPizza() {
   return <div>GetYourPizza</div>;

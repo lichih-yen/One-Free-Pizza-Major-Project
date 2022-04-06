@@ -11,26 +11,23 @@ nav {
   display: flex;
   gap: 0.8rem;
   border-radius: 3rem;
-  backdrop-filter: blur(15px);
+  backdrop-filter: blur(8px);
 
   a {
     display: flex;
     background: transparent;
     color: grey;
     padding: 1rem;
-    font-size: 2rem;
+    font-size: 2.1rem;
     border-radius: 50%;
-
-    // align-items: center;
-    // cursor: pointer;
 
     &:hover {
       background: rgba(0, 0, 0, 0.6);
     }
 
     .active {
-      background: rgba(118, 117, 117, 0.6);
-      color: #fff;
+      background: rgba(0, 0, 0, 0.6);
+      color: orange;
     }
   }
 }

@@ -19,14 +19,16 @@ const NavBar = () => {
         <AiOutlineHome />
       </NavLink>
       <NavLink
-        to="/getYourPizza"
+        // to="/getYourPizza"
+        to="/"
         className={({ isActive }) => (isActive ? "active" : "inactive")}
         // onClick={() => setIsActiveNav(true)}
       >
         <IoPizzaOutline />
       </NavLink>
       <NavLink
-        to="/orders"
+        // to="/orders"
+        to="/"
         className={({ isActive }) => (isActive ? "active" : "inactive")}
         // className={isActiveNav === true ? "" : "null"}
         // onClick={() => setIsActiveNav(true)}

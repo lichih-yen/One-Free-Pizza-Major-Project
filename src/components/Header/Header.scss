@@ -8,8 +8,11 @@
   height: 100px;
 
   h1 {
+    font-size: clamp(1.5rem, 10vw, 3rem);
+    margin-bottom: 1rem;
     color: #fff;
     justify-content: center;
     align-items: center;
+    letter-spacing: 3px;
   }
 }

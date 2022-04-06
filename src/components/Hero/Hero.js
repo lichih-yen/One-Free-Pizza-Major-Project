@@ -2,7 +2,7 @@ import React from "react";
 import "./Hero.scss";
 import NavBar from "../NavBar/NavBar";
 import Header from "../Header/Header";
-import { Routes, Route } from "react-router-dom";
+// import { Routes, Route } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -10,7 +10,7 @@ const Hero = () => {
       <Header />
       <NavBar />
       <div className="hero-content">
-        <h1>Greatest Pizza Ever</h1>
+        <h1>Welcome</h1>
         <p>Hi there,</p>
         <p>
           We are giving one free pizza to all our customers. <br />
