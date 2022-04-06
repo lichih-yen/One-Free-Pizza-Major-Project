@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Form.scss";
+import uuid from "react-uuid";
 
 function Form() {
   const [style, setStyle] = useState("-Select-");
@@ -7,6 +8,7 @@ function Form() {
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
+  const [extraCheese, setExtraCheese] = useState(false);
 
   const handleStyleChange = (event) => {
     const value = event.target.value;
@@ -28,25 +30,30 @@ function Form() {
     setAddress(value);
   };
 
+  const handleExtraCheese = (event) => {
+    const value = event.target.checked;
+    setExtraCheese(value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
     let error = [];
 
-    if (style === "-Select" || style === "") {
-      error.push("Select a Style you want");
+    if (style === "-Select-") {
+      error.push("Choose a Style you want.");
     }
 
-    if (crust === "-Select" || crust === "") {
-      error.push("Select a crust you like");
+    if (crust === "-Select-") {
+      error.push("Select a crust you like.");
     }
 
     if (name === "") {
-      error.push("Please enter your name");
+      error.push("Please enter your name.");
     }
 
     if (address === "") {
-      error.push("Please enter your address");
+      error.push("Please enter your address.");
     }
 
     // Update the state based on the errors
@@ -55,15 +62,23 @@ function Form() {
     }
   };
 
+  // const renderCheckBox = () => {
+  //   const extraCheeseStyle = {
+  //     color: extraCheese ? "green" : "blue",
+  //   };
+  // };
+
   return (
     <form onSubmit={handleSubmit}>
       {errorMessage && (
-        <div className="error">Invalid data: {errorMessage}</div>
+        <div className="error">
+          Invalid data:{<br />}
+          {errorMessage}
+        </div>
       )}
       <h3>Create your own pizza and submit your order.</h3>
       <label>
         <span>Style</span>
-        {/* Hawaiian, Pepperoni, Canadian, Supreme, Cheese, or Margherita. */}
         <select value={style} onChange={handleStyleChange}>
           <option value="-Select-">-Select-</option>
           <option value="Hawaiian">Hawaiian</option>
@@ -77,7 +92,6 @@ function Form() {
 
       <label>
         <span>Crust</span>
-        {/* Original Crust, Thin Crust, or Gluten-Free Crust. */}
         <select value={crust} onChange={handleCrustChange}>
           <option value="-Select-">-Select-</option>
           <option value="Original Crust">Original Crust</option>
@@ -87,7 +101,11 @@ function Form() {
       </label>
 
       <label>
-        <input type="checkbox" checked={""} onChange={""} />
+        <input
+          type="checkbox"
+          checked={extraCheese}
+          onChange={handleExtraCheese}
+        />
         Extra Cheese
       </label>
 
