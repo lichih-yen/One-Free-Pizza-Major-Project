@@ -1,18 +1,36 @@
 nav {
+  display: block;
+  background: rgba(0, 0, 0, 0.3);
+  width: max-content;
+  padding: 0.7rem 1.7rem;
+  z-index: 2;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  // bottom: 2rem;
   display: flex;
-  background: transparent;
-  height: 80px;
-  justify-content: center;
-  align-items: center;
-  font-weight: 700;
-}
+  gap: 0.8rem;
+  border-radius: 3rem;
+  backdrop-filter: blur(15px);
 
-.NavLink {
-  display: flex;
-  color: #fff;
-  font-size: 2rem;
-  text-decoration: none;
-  padding: 0 20px;
-  align-items: center;
-  cursor: pointer;
+  a {
+    display: flex;
+    background: transparent;
+    color: grey;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 50%;
+
+    // align-items: center;
+    // cursor: pointer;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .active {
+      background: rgba(118, 117, 117, 0.6);
+      color: #fff;
+    }
+  }
 }

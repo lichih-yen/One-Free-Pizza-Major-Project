@@ -1,8 +1,14 @@
-.headerContainer {
+.header-container {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+
   h1 {
-    display: block;
-    background: transparent;
-    height: 80px;
+    color: #fff;
     justify-content: center;
     align-items: center;
   }
