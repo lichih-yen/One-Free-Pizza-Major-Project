@@ -1,16 +1,13 @@
-import "./App.scss";
-import Hero from "./components/Hero/Hero";
-import { BrowserRouter as Router } from "react-router-dom";
-import GetYourPizza from "./components/GetYourPizza/GetYourPizza";
+import Header from "./components/Header/Header";
+import MainMenu from "./components/MainMenu/MainMenu";
+import background from "./images/background.jpg";
 
 function App() {
   return (
-    <>
-      <Router>
-        <Hero />
-        <GetYourPizza />
-      </Router>
-    </>
+    <div style={{ backgroundImage: `url(${background})` }}>
+      <Header />
+      <MainMenu />
+    </div>
   );
 }
 
