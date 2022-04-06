@@ -1,9 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import MainMenu from "./components/MainMenu/MainMenu";
-// import Getyourpizza from "./components/Getyourpizza/Getyourpizza";
-// import Home from "./components/Home/Home";
-// import Orders from "./components/Orders/Oders";
 import "./App.scss";
 import HomePage from "./pages/HomePage/HomePage";
 import GetPizzaPage from "./pages/GetPizzaPage/GetPizzaPage";
@@ -18,7 +15,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/getyourpizza" element={<GetPizzaPage />} />
+        <Route path="/get-your-pizza" element={<GetPizzaPage />} />
         <Route path="/orders" element={<OrdersPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

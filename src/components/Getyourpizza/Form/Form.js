@@ -1,7 +1,15 @@
 import React from "react";
 import "./Form.scss";
 
-export default function Form() {
-  return <div>Form</div>;
+function Form() {
+  return (
+    <form>
+      <label>
+        <span>Style</span>
+        <select></select>
+      </label>
+    </form>
+  );
 }
-ce;
+
+export default Form;

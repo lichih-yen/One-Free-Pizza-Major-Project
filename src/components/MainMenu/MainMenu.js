@@ -11,7 +11,7 @@ function MainMenu() {
       <NavLink to="/">
         <AiOutlineHome />
       </NavLink>
-      <NavLink to="/getyourpizza">
+      <NavLink to="/get-your-pizza">
         <IoPizzaOutline />
       </NavLink>
       <NavLink to="/orders">
