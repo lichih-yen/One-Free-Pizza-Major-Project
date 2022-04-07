@@ -7,3 +7,9 @@ main {
     font-size: 36px;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  main {
+    margin: 125px 50px;
+  }
+}

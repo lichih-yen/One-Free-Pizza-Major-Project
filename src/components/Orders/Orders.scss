@@ -1,0 +1,11 @@
+.orders-container {
+  margin: 0px 200px;
+  display: block;
+  color: white;
+}
+
+@media screen and (max-width: 1200px) {
+  .getPizza-container {
+    margin: 100px 50px;
+  }
+}

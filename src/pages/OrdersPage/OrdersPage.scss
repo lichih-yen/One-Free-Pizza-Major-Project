@@ -1,3 +1,15 @@
 main {
   color: white;
+
+  h1 {
+    text-shadow: 0px 1.1px #e9ba23;
+    letter-spacing: 2px;
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    margin: 125px 50px;
+  }
 }

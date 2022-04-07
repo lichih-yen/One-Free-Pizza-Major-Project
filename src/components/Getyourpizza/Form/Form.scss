@@ -1,6 +1,8 @@
 form {
   margin-top: 0;
   padding: 0;
+  width: 100%;
+
   .error {
     margin-left: 15px;
     margin-bottom: 0;
@@ -59,7 +61,8 @@ form {
 
     &:hover {
       background-color: #e08505;
-      transition: 0.3s ease-in-out;
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
     }
   }
 }
