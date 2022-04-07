@@ -22,7 +22,7 @@ function Order(props) {
           <p>{props.order.crust}</p>
           <hr />
           <h3>Extra Cheese: </h3>
-          <p>{props.order.cheese}</p>
+          <p>{props.order.cheese === true ? "Yes" : "No"}</p>
           <hr />
           <button
             type="button"
