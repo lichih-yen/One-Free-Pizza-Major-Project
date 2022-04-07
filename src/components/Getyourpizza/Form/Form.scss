@@ -66,3 +66,12 @@ form {
     }
   }
 }
+.success-submit {
+  padding: 50px 0;
+  text-align: center;
+
+  strong {
+    font-size: 32px;
+    color: green;
+  }
+}

@@ -2,7 +2,7 @@ import React from "react";
 import Form from "./Form/Form";
 import "./Getyourpizza.scss";
 
-function Getyourpizza() {
+function Getyourpizza(props) {
   return (
     <div className="getPizza-container">
       <h1>Get Your Pizza</h1>

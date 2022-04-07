@@ -3,6 +3,7 @@ import "./Orders.scss";
 import api from "../../api";
 import uuid from "react-uuid";
 import Order from "./Order/Order";
+// import Form from "../Getyourpizza/Form/Form";
 
 function Orders() {
   const [orders, setOrders] = useState([]);
@@ -34,11 +35,22 @@ function Orders() {
         address: "799 Topone Ave.",
       },
     ];
+
+    // api.get("/orders").then((response) => {
+    //   if (response.status === "200") {
+    //     setOrders(response.data);
+    //   }
+    // });
     setOrders(orders);
   }, []);
 
   const handleOrderRemove = (id) => {
     let updatedOrders = orders.filter((order) => order.id !== id);
+    setOrders(updatedOrders);
+  };
+
+  const addOrder = (newOrder) => {
+    const updatedOrders = [...orders, newOrder];
     setOrders(updatedOrders);
   };
 
@@ -52,6 +64,7 @@ function Orders() {
             key={index}
             order={order}
             handleOrderRemove={handleOrderRemove}
+            addOrder={addOrder}
           />
         ))}
       </div>

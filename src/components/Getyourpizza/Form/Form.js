@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import "./Form.scss";
+import api from "../../../api/index";
+import uuid from "react-uuid";
 
-function Form() {
+function Form(props) {
   const [style, setStyle] = useState("-Select-");
   const [crust, setCrust] = useState("-Select-");
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
-  const [errorMessage, setErrorMessage] = useState(null);
   const [extraCheese, setExtraCheese] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [formSubmited, setFormSubmited] = useState(false);
 
   const handleStyleChange = (event) => {
     const value = event.target.value;
@@ -58,96 +61,132 @@ function Form() {
     // Update the state based on the errors
     if (error.length > 0) {
       setErrorMessage(error);
+    } else {
+      setErrorMessage(null);
+      setFormSubmited(true);
+
+      const newOrder = {
+        id: uuid(),
+        style: style,
+        crust: crust,
+        cheese: extraCheese,
+        name: name,
+        address: address,
+      };
+
+      props.addOrder(newOrder);
+
+      // const addOrder = (newOrder) => {
+      //   const updatedOrders = [...props.orders, newOrder];
+      //   setOrders(updatedOrders);
+      // };
+
+      // setStyle("-Select-");
+      // setCrust("-Select-");
+      // setExtraCheese(false);
+      // setName("");
+      // setAddress("");
+
+      // api.post("/orders", newOrder).then((response) => {
+      //   if (response.status === 201) {
+      //     addOrder(newOrder);
+
+      //     setStyle("-Select-");
+      //     setCrust("-Select-");
+      //     setExtraCheese(false);
+      //     setName("");
+      //     setAddress("");
+      //   }
+      // });
     }
-    // else {
-    //   let data = {
-    //     id: uuid(),
-    //     style: style,
-    //     crust: crust,
-    //     cheese: extraCheese,
-    //     name: name,
-    //     address: address,
-    //   };
-    // }
   };
 
-  // const renderCheckBox = () => {
-  //   const extraCheeseStyle = {
-  //     color: extraCheese ? "green" : "blue",
-  //   };
-  // };
+  const render = () => {
+    return formSubmited ? renderSuccess() : renderForm();
+  };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      {errorMessage && (
-        <div className="error">
-          Invalid data:
-          <ul>
-            {errorMessage.map((error, index) => (
-              <li key={index}>{error}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-      <h3>Create your own pizza and submit your order.</h3>
-      <label>
-        <span>Style</span>
-        <select value={style} onChange={handleStyleChange}>
-          <option value="-Select-">-Select-</option>
-          <option value="Hawaiian">Hawaiian</option>
-          <option value="Pepperoni">Pepperoni</option>
-          <option value="Canadian">Canadian</option>
-          <option value="Supreme">Supreme</option>
-          <option value="Cheese">Cheese</option>
-          <option value="Margherita">Margherita</option>
-        </select>
-      </label>
+  const renderSuccess = () => {
+    return (
+      <div className="success-submit">
+        <strong>Success</strong>
+        <p>Your order was submitted</p>
+      </div>
+    );
+  };
 
-      <label>
-        <span>Crust</span>
-        <select value={crust} onChange={handleCrustChange}>
-          <option value="-Select-">-Select-</option>
-          <option value="Original Crust">Original Crust</option>
-          <option value="Thin Crust">Thin Crust</option>
-          <option value="Gluten-Free Crust">Gluten-Free Crust</option>
-        </select>
-      </label>
+  const renderForm = () => {
+    return (
+      <form onSubmit={handleSubmit}>
+        {errorMessage && (
+          <div className="error">
+            Invalid data:
+            <ul>
+              {errorMessage.map((error, index) => (
+                <li key={index}>{error}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <h3>Create your own pizza and submit your order.</h3>
+        <label>
+          <span>Style</span>
+          <select value={style} onChange={handleStyleChange}>
+            <option value="-Select-">-Select-</option>
+            <option value="Hawaiian">Hawaiian</option>
+            <option value="Pepperoni">Pepperoni</option>
+            <option value="Canadian">Canadian</option>
+            <option value="Supreme">Supreme</option>
+            <option value="Cheese">Cheese</option>
+            <option value="Margherita">Margherita</option>
+          </select>
+        </label>
 
-      <label>
-        <input
-          type="checkbox"
-          checked={extraCheese}
-          onChange={handleExtraCheese}
-        />
-        Extra Cheese
-      </label>
+        <label>
+          <span>Crust</span>
+          <select value={crust} onChange={handleCrustChange}>
+            <option value="-Select-">-Select-</option>
+            <option value="Original Crust">Original Crust</option>
+            <option value="Thin Crust">Thin Crust</option>
+            <option value="Gluten-Free Crust">Gluten-Free Crust</option>
+          </select>
+        </label>
 
-      <h3>Your Data</h3>
-      <label>
-        <span>Name</span>
-        <input
-          className="data-input"
-          type="text"
-          maxLength={150}
-          value={name}
-          onChange={handleNameChange}
-        />
-      </label>
+        <label>
+          <input
+            type="checkbox"
+            checked={extraCheese}
+            onChange={handleExtraCheese}
+          />
+          Extra Cheese
+        </label>
 
-      <label>
-        <span>Address</span>
-        <input
-          className="data-input"
-          type="text"
-          maxLength={150}
-          value={address}
-          onChange={handleAddressChange}
-        />
-      </label>
+        <h3>Your Data</h3>
+        <label>
+          <span>Name</span>
+          <input
+            className="data-input"
+            type="text"
+            maxLength={150}
+            value={name}
+            onChange={handleNameChange}
+          />
+        </label>
 
-      <button type="submit">Order Now</button>
-    </form>
-  );
+        <label>
+          <span>Address</span>
+          <input
+            className="data-input"
+            type="text"
+            maxLength={150}
+            value={address}
+            onChange={handleAddressChange}
+          />
+        </label>
+
+        <button type="submit">Order Now</button>
+      </form>
+    );
+  };
 }
 
 export default Form;
