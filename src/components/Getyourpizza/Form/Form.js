@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Form.scss";
-import uuid from "react-uuid";
 
 function Form() {
   const [style, setStyle] = useState("-Select-");

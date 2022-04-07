@@ -1,7 +1,13 @@
 .orders-container {
-  margin: 0px 200px;
+  margin: 0px 180px;
   display: block;
   color: white;
+
+  .orders-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 
 @media screen and (max-width: 1200px) {
