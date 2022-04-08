@@ -65,6 +65,41 @@ form {
       cursor: pointer;
     }
   }
+
+  .saving {
+    margin-top: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .saving > span {
+    display: inline-block;
+    background-color: orange;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    margin: 0 8px;
+    animation: bounce 0.6s infinite alternate;
+    transform: translate3d(0);
+  }
+
+  .saving > span:nth-child(2) {
+    background-color: darkgrey;
+    animation-delay: 0.25s;
+  }
+
+  .saving > span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes bounce {
+    to {
+      width: 14px;
+      height: 14px;
+      transform: translate3d(0, -14px, 0);
+    }
+  }
 }
 .success-submit {
   padding: 50px 0;

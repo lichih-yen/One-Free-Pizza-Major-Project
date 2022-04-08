@@ -17,16 +17,6 @@ function MainMenu() {
       <NavLink to="/orders">
         <IoDocumentTextOutline />
       </NavLink>
-
-      {/* <NavLink to="/">
-        <AiOutlineHome style={iconStyle} />
-      </NavLink>
-      <NavLink to="/getyourpizza">
-        <IoPizzaOutline style={iconStyle} />
-      </NavLink>
-      <NavLink to="/orders">
-        <IoDocumentTextOutline style={iconStyle} />
-      </NavLink> */}
     </nav>
   );
 }

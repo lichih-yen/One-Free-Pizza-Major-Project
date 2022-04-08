@@ -3,7 +3,7 @@ import "./Form.scss";
 import api from "../../../api/index";
 import uuid from "react-uuid";
 
-function Form(props) {
+function Form() {
   const [style, setStyle] = useState("-Select-");
   const [crust, setCrust] = useState("-Select-");
   const [name, setName] = useState("");
@@ -11,6 +11,8 @@ function Form(props) {
   const [extraCheese, setExtraCheese] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const [formSubmited, setFormSubmited] = useState(false);
+
+  const [saving, setSaving] = useState(false);
 
   const handleStyleChange = (event) => {
     const value = event.target.value;
@@ -63,8 +65,6 @@ function Form(props) {
       setErrorMessage(error);
     } else {
       setErrorMessage(null);
-      setFormSubmited(true);
-
       const newOrder = {
         id: uuid(),
         style: style,
@@ -74,36 +74,14 @@ function Form(props) {
         address: address,
       };
 
+      setSaving(true);
+
       api.post("/orders", newOrder).then((response) => {
         if (response.status === 201) {
+          setFormSubmited(true);
           renderSuccess();
         }
       });
-
-      // props.addOrder(newOrder);
-
-      // const addOrder = (newOrder) => {
-      //   const updatedOrders = [...props.orders, newOrder];
-      //   setOrders(updatedOrders);
-      // };
-
-      // setStyle("-Select-");
-      // setCrust("-Select-");
-      // setExtraCheese(false);
-      // setName("");
-      // setAddress("");
-
-      // api.post("/orders", newOrder).then((response) => {
-      //   if (response.status === 201) {
-      //     addOrder(newOrder);
-
-      //     setStyle("-Select-");
-      //     setCrust("-Select-");
-      //     setExtraCheese(false);
-      //     setName("");
-      //     setAddress("");
-      //   }
-      // });
     }
   };
 
@@ -129,6 +107,15 @@ function Form(props) {
             </ul>
           </div>
         )}
+
+        {saving && (
+          <div className="saving">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        )}
+
         <h3>Create your own pizza and submit your order.</h3>
         <label>
           <span>Style</span>
