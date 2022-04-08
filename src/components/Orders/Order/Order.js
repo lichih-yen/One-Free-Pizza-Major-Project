@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Order.scss";
 import api from "../../../api";
 
 function Order(props) {
+  const [loading, setLoading] = useState(true);
+
   const handleRemoveClick = () => {
     const id = props.order.id;
     api.delete("/orders/" + id).then((response) => {
       if (response === 200) {
         props.handleOrderRemove(id);
+        setLoading(false);
       }
     });
   };

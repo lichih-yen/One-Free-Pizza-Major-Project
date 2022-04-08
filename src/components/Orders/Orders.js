@@ -7,33 +7,6 @@ function Orders() {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    // const orders = [
-    //   {
-    //     id: uuid(),
-    //     style: "Canadian",
-    //     crust: "Original Crust",
-    //     cheese: true,
-    //     name: "Richie",
-    //     address: "123 Test St.",
-    //   },
-    //   {
-    //     id: uuid(),
-    //     style: "Hawaiian",
-    //     crust: "Thin Crust",
-    //     cheese: true,
-    //     name: "Lucy",
-    //     address: "321 Trying Dr.",
-    //   },
-    //   {
-    //     id: uuid(),
-    //     style: "Margherita",
-    //     crust: "Gluten-Free Crust",
-    //     cheese: false,
-    //     name: "Calvin",
-    //     address: "799 Topone Ave.",
-    //   },
-    // ];
-
     api.get("/orders").then((response) => {
       if (response.status === 200) {
         let data = response.data;
