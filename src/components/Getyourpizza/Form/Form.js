@@ -65,16 +65,16 @@ function Form(props) {
       setErrorMessage(null);
       setFormSubmited(true);
 
-      const newOrder = {
-        id: uuid(),
-        style: style,
-        crust: crust,
-        cheese: extraCheese,
-        name: name,
-        address: address,
-      };
+      // const newOrder = {
+      //   id: uuid(),
+      //   style: style,
+      //   crust: crust,
+      //   cheese: extraCheese,
+      //   name: name,
+      //   address: address,
+      // };
 
-      props.addOrder(newOrder);
+      // props.addOrder(newOrder);
 
       // const addOrder = (newOrder) => {
       //   const updatedOrders = [...props.orders, newOrder];
@@ -101,9 +101,9 @@ function Form(props) {
     }
   };
 
-  const render = () => {
-    return formSubmited ? renderSuccess() : renderForm();
-  };
+  // props.render = () => {
+  //   return formSubmited ? renderSuccess() : renderForm();
+  // };
 
   const renderSuccess = () => {
     return (
@@ -187,6 +187,7 @@ function Form(props) {
       </form>
     );
   };
+  return formSubmited ? renderSuccess() : renderForm();
 }
 
 export default Form;
