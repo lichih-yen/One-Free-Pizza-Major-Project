@@ -35,24 +35,17 @@ function Orders() {
     // ];
 
     api.get("/orders").then((response) => {
-      if (response.status === "200") {
+      if (response.status === 200) {
         let data = response.data;
         setOrders(data);
       }
     });
-
-    // setOrders(orders);
   }, []);
 
   const handleOrderRemove = (id) => {
     let updatedOrders = orders.filter((order) => order.id !== id);
     setOrders(updatedOrders);
   };
-  // const addOrders = (newOrder) => {
-
-  // };
-  // const updatedOrders = [...orders, props.newOrder];
-  // setOrders(updatedOrders);
 
   return (
     <div className="orders-container">

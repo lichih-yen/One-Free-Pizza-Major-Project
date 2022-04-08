@@ -5,7 +5,7 @@ import api from "../../../api";
 function Order(props) {
   const handleRemoveClick = () => {
     const id = props.order.id;
-    api.delete("/orders" + id).then((response) => {
+    api.delete("/orders/" + id).then((response) => {
       if (response === 200) {
         props.handleOrderRemove(id);
       }
