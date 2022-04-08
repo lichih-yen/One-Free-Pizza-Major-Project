@@ -3,7 +3,7 @@ import axios from "axios";
 const instance = axios.create({
   baseURL: "https://9cxlt1wgo5.execute-api.us-east-1.amazonaws.com/api",
   timeout: 5000,
-  headers: { Authorization: "basic d5b11d03-7e29-4e62-8afd-0722912a3e3b" },
+  headers: { Authorization: "basic cf4b1151-cf48-45ff-a897-7cb896ac94bf" },
 });
 
 export default instance;

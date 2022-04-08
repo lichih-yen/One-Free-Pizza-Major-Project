@@ -65,14 +65,20 @@ function Form(props) {
       setErrorMessage(null);
       setFormSubmited(true);
 
-      // const newOrder = {
-      //   id: uuid(),
-      //   style: style,
-      //   crust: crust,
-      //   cheese: extraCheese,
-      //   name: name,
-      //   address: address,
-      // };
+      const newOrder = {
+        id: uuid(),
+        style: style,
+        crust: crust,
+        cheese: extraCheese,
+        name: name,
+        address: address,
+      };
+
+      api.post("/orders", newOrder).then((response) => {
+        if (response.status === 201) {
+          renderSuccess();
+        }
+      });
 
       // props.addOrder(newOrder);
 
