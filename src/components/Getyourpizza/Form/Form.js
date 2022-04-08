@@ -101,10 +101,6 @@ function Form(props) {
     }
   };
 
-  // props.render = () => {
-  //   return formSubmited ? renderSuccess() : renderForm();
-  // };
-
   const renderSuccess = () => {
     return (
       <div className="success-submit">
