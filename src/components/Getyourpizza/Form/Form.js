@@ -60,7 +60,6 @@ function Form() {
       error.push("Please enter your address.");
     }
 
-    // Update the state based on the errors
     if (error.length > 0) {
       setErrorMessage(error);
     } else {
