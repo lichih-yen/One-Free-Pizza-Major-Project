@@ -25,4 +25,4 @@ You may also see any lint errors in the console.
 4. Using ***REST API*** to submit the order to API and can delete or retrieve the orders from the API and
 display them on the page.
 
-Live Demo: https://github.com/lichih-yen/One-Free-Pizza-Major-Project
+**Live Demo**: https://lichih-yen.github.io/One-Free-Pizza-Major-Project
