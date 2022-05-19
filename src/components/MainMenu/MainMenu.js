@@ -21,9 +21,4 @@ function MainMenu() {
   );
 }
 
-// const iconStyle = {
-//   color: "white",
-//   fontSize: "20px",
-// };
-
 export default MainMenu;
